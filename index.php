@@ -18,8 +18,8 @@ require './controller/header.php';
 
 // ************          Gestion de Routing ***************************************
 $routes = [
-    // '/' => './controller/home.php',
-    // 'home' => './controller/home.php',
+    '/' => './controller/accueil.php',
+    'accueil' => './controller/accueil.php',
     // 'creer' => './controller/creer.php',
     // 'delete' => './controller/delete.php',
     // 'update' => './controller/update.php',
