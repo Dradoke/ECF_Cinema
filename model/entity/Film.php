@@ -7,15 +7,17 @@ class Film
     private $director;
     private $poster;
     private $year;
-    // private $type;
+    private $type;
+    
 
 
-    public function __construct($title, $director, $poster, $year)
+    public function __construct($title, $director, $poster, $year, $type)
     {
         $this->title = $title;
         $this->director = $director;
         $this->poster = $poster;
         $this->year = $year;
+        $this->type = $type;
     }
 
         /**
@@ -94,6 +96,26 @@ class Film
         public function setYear($year)
         {
                 $this->year = $year;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of type
+         */ 
+        public function getType()
+        {
+                return $this->type;
+        }
+
+        /**
+         * Set the value of type
+         *
+         * @return  self
+         */ 
+        public function setType($type)
+        {
+                $this->type = $type;
 
                 return $this;
         }
