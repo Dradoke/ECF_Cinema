@@ -145,4 +145,27 @@ class Movie
 
 
 
+
+        /**
+         * Get the value of role
+         */ 
+        public function getRole()
+        {
+                return $this->role;
+        }
+
+        /**
+         * Set the value of role
+         *
+         * @return  self
+         */ 
+        public function setRole($role)
+        {
+                if ($role instanceof Role) {
+                        $this->role[] = $role;
+                } else {
+                        throw new InvalidArgumentException("instance de Role obligatoire");
+                }
+                return $this;
+        }
 }
