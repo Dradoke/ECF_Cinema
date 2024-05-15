@@ -8,10 +8,11 @@ class Movie
     private $poster;
     private $year;
     private $type;
+    private $role = [];
     
 
 
-    public function __construct(int $id, string $title, string $director, string $poster, int $year, string $type)
+    public function __construct(int $id, string $title, string $director, string $poster, int $year, string $type, Role $role)
     {
         $this->id = $id;
         $this->title = $title;
@@ -19,6 +20,7 @@ class Movie
         $this->poster = $poster;
         $this->year = $year;
         $this->type = $type;
+        $this->role = $role;
     }
 
         /**
@@ -140,4 +142,11 @@ class Movie
 
                 return $this;
         }
+
+
+        public function addRole($character) {
+                $role = new Role($character);
+                $this->role[] = $role;
+            }
+
 }

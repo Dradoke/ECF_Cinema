@@ -4,15 +4,11 @@ class Role
 {
 
     protected $id;
-    private $fk_movie;
-    private $fk_actor;
     private $character;
 
-    public function __construct(int $id, int $fk_movie, int $fk_actor, string $character)
+    public function __construct(string $character, Actor $actor)
     {
-        $this->id = $id;
-        $this->fk_movie = $fk_movie;
-        $this->fk_actor = $fk_actor;
+       
         $this->character = $character;
     }
 
