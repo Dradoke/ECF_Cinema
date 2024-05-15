@@ -36,3 +36,6 @@ if (array_key_exists($controller, $routes)) {
 
 // ************          Affichage du footer  ***************************************
 require './controller/footer.php';
+
+
+require './ECF_Cinema/model/repository/connexion.php';

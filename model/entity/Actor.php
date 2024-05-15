@@ -1,19 +1,42 @@
-<?php 
+<?php
 
 class Actor
 {
-    private $name;
-    private $firstName;
 
-    public function __construct($name, $firstName)
-    {
-        $this->name = $name;
-        $this->firstName = $firstName;
-    }
+        private $id;
+        private $name;
+        private $firstName;
+
+        public function __construct(int $id, string $name, string $firstName)
+        {
+                $this->id = $id;
+                $this->name = $name;
+                $this->firstName = $firstName;
+        }
+
+        /**
+         * Get the value of id
+         */
+        public function getId()
+        {
+                return $this->id;
+        }
+
+        /**
+         * Set the value of id
+         *
+         * @return  self
+         */
+        public function setId($id)
+        {
+                $this->id = $id;
+
+                return $this;
+        }
 
         /**
          * Get the value of name
-         */ 
+         */
         public function getName()
         {
                 return $this->name;
@@ -23,7 +46,7 @@ class Actor
          * Set the value of name
          *
          * @return  self
-         */ 
+         */
         public function setName($name)
         {
                 $this->name = $name;
@@ -33,7 +56,7 @@ class Actor
 
         /**
          * Get the value of firstName
-         */ 
+         */
         public function getFirstName()
         {
                 return $this->firstName;
@@ -43,7 +66,7 @@ class Actor
          * Set the value of firstName
          *
          * @return  self
-         */ 
+         */
         public function setFirstName($firstName)
         {
                 $this->firstName = $firstName;
