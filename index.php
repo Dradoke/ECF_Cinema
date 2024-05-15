@@ -33,6 +33,27 @@ if (array_key_exists($controller, $routes)) {
     require 'controller/erreur.php';
 }
 
+// ************          Affichage du Main ***************************************
+require_once './model/repository/connexion.php';
+require_once './model/repository/MovieDao.php';
+require_once './model/repository/ActorDao.php';
+require_once './model/repository/UserDao.php';
+require_once './model/repository/RoleDao.php';
+require_once './model/entity/Movie.php';
+require_once './model/entity/Actor.php';
+require_once './model/entity/User.php';
+require_once './model/entity/Role.php';
+
+$movies =  new MovieDao;
+$roles = new RoleDao;
+
+echo $twig->render('accueil.html.twig',
+['movies' => $movies,
+'roles' => $roles
+]
+);
+
+
 
 // ************          Affichage du footer  ***************************************
 require './controller/footer.php';
