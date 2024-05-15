@@ -37,15 +37,9 @@ class RoleDao
      }
 
 
-    public static function addOne($data): bool
-    {
-        $movie = new Movie($data['id'], $data['title'], $data['director'], $data['poster'], $data['year']);
-        $actor = new Actor($data['id'], $data['name'], $data['firstname']);
-
-        $requete = 'INSERT INTO roles (fk_movie, fk_actor, character) VALUES (:fk_movie , :fk_actor, :character)';
-        $valeurs = ['fk_movie' => $movie->getId(), 'fk_actor' => $actor->getId(), 'character' => $data->getCharacter()];
-        $insert = BDD->prepare($requete);
-        return $insert->execute($valeurs);
-    }
+    // public static function addOne($data): bool
+    // {
+       
+    // }
 
 }
