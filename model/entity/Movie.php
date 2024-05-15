@@ -12,7 +12,7 @@ class Movie
 
 
 
-        public function __construct(int $id, string $title, string $director, string $poster, int $year, string $type, Role $roles)
+        public function __construct(int $id, string $title, string $director, string $poster, int $year, string $type, array $roles)
         {
                 $this->id = $id;
                 $this->title = $title;
@@ -20,7 +20,7 @@ class Movie
                 $this->poster = $poster;
                 $this->year = $year;
                 $this->type = $type;
-                $this->setRole($roles);
+                $this->roles[] = $roles;
         }
 
         /**
@@ -144,28 +144,23 @@ class Movie
         }
 
 
-
-
         /**
-         * Get the value of role
+         * Get the value of roles
          */
-        public function getRole()
+        public function getRoles()
         {
                 return $this->roles;
         }
 
         /**
-         * Set the value of role
+         * Set the value of roles
          *
          * @return  self
          */
-        public function setRole($role)
+        public function setRoles($roles)
         {
-                if ($role instanceof Role) {
-                        $this->roles[] = $role;
-                } else {
-                        throw new InvalidArgumentException("instance de Role obligatoire");
-                }
+                $this->roles = $roles;
+
                 return $this;
         }
 }
