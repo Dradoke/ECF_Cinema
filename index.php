@@ -57,3 +57,6 @@ echo $twig->render('accueil.html.twig',
 
 // ************          Affichage du footer  ***************************************
 require './controller/footer.php';
+
+
+require './ECF_Cinema/model/repository/connexion.php';

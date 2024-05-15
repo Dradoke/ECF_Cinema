@@ -28,10 +28,10 @@ class RoleDao
          return new Role($data['id'], $data['fk_movie'], $data['fk_actor'], $data['character']);
      }
 
-     public static function getRoleMovie($fk_movie): Role
+     public static function getRoleMovie(int $id, $fk_movie): Role
      {
-         $query = BDD->prepare('SELECT * FROM role INNER JOIN movie ON role.fk_movie = movie.id WHERE movie.id = :fk_movie' );
-         $query->execute(array(':fk_movie' => $fk_movie));
+         $query = BDD->prepare('SELECT * FROM role INNER JOIN movie ON role.fk_movie = movie.id WHERE id = :id_role' );
+         $query->execute(array(':id_role' => $id, ':fk_movie' => $fk_movie));
          $data = $query->fetch();
          return new Role($data['id'], $data['fk_movie'], $data['fk_actor'], $data['character']);
      }

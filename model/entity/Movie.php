@@ -144,9 +144,5 @@ class Movie
         }
 
 
-        public function addRole($character) {
-                $role = new Role($character);
-                $this->role[] = $role;
-            }
 
 }
