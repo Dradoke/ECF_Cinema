@@ -7,19 +7,17 @@ class Movie
         private $director;
         private $poster;
         private $year;
-        private $type;
         private $roles = [];
 
 
 
-        public function __construct(int $id, string $title, string $director, string $poster, int $year, string $type, array $roles)
+        public function __construct(int $id, string $title, string $director, string $poster, int $year, array $roles)
         {
                 $this->id = $id;
                 $this->title = $title;
                 $this->director = $director;
                 $this->poster = $poster;
                 $this->year = $year;
-                $this->type = $type;
                 $this->roles[] = $roles;
         }
 
@@ -119,26 +117,6 @@ class Movie
         public function setId($id)
         {
                 $this->id = $id;
-
-                return $this;
-        }
-
-        /**
-         * Get the value of type
-         */
-        public function getType()
-        {
-                return $this->type;
-        }
-
-        /**
-         * Set the value of type
-         *
-         * @return  self
-         */
-        public function setType($type)
-        {
-                $this->type = $type;
 
                 return $this;
         }
