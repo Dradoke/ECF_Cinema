@@ -2,11 +2,13 @@
 
 class Actor
 {
+        protected $id;
     private $name;
     private $firstName;
 
-    public function __construct($name, $firstName)
+    public function __construct(int $id, string $name, string $firstName)
     {
+        $this->id = $id;
         $this->name = $name;
         $this->firstName = $firstName;
     }

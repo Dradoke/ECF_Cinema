@@ -2,14 +2,16 @@
 
 class User
 {
+        protected $id;
     private $username;
     private $email;
     private $password;
 
 
 
-    public function __construct($username, $email, $password)
+    public function __construct(int $id, string $username, string $email, string $password)
     {
+        $this->id = $id;
         $this->username = $username;
         $this->email = $email;
         $this->password = $password;

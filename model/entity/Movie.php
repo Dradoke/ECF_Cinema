@@ -1,8 +1,8 @@
 <?php
 
-class Film
+class Movie
 {
-
+        protected $id;
     private $title;
     private $director;
     private $poster;
@@ -11,8 +11,9 @@ class Film
     
 
 
-    public function __construct($title, $director, $poster, $year, $type)
+    public function __construct(int $id, string $title, string $director, string $poster, int $year, string $type)
     {
+        $this->id = $id;
         $this->title = $title;
         $this->director = $director;
         $this->poster = $poster;
@@ -96,6 +97,26 @@ class Film
         public function setYear($year)
         {
                 $this->year = $year;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of id
+         */ 
+        public function getId()
+        {
+                return $this->id;
+        }
+
+        /**
+         * Set the value of id
+         *
+         * @return  self
+         */ 
+        public function setId($id)
+        {
+                $this->id = $id;
 
                 return $this;
         }
