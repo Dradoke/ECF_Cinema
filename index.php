@@ -59,4 +59,4 @@ echo $twig->render('accueil.html.twig',
 require './controller/footer.php';
 
 
-require './ECF_Cinema/model/repository/connexion.php';
+require './model/repository/connexion.php';
